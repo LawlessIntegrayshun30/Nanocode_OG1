@@ -1,28 +1,29 @@
-# Nanocode v1.0 (Open Source Observation & Orchestration Framework)
+# Nanocode v1.0 (Open Source Orchestration Framework)
 
-Nanocode v1.0 is an open-source local observation and orchestration framework for constraint-aware, model-agnostic AI workflows. It provides a structured way to define constraints, apply recovery strategies, and generate execution traces for AI calls. This repository is an observation tool; governance features are outside its scope and should be contributed separately.
+Nanocode v1.0 is an open-source local orchestration framework for constraint-governed, model-agnostic AI workflows. It provides a structured way to apply constraints, recovery strategies, and certification artifacts to AI calls. This repository is intentionally **not** a sovereign kernel and does not include any closed Nanocode v2 kernel components.
 
 ## What this repository includes
-- Constraint engine (framework-level): constraint profiles, structured prompt templates, and constraint observation.
-- Recovery ("tragedy") strategies: bounded fallback/degrade/retry patterns for predictable behavior.
-- Execution traces: run artifacts describing which constraints were applied, waived, or failed.
+- Constraint engine (framework-level): constraint profiles, policy gating, and structured prompt templates.
+- Recovery (“tragedy”) strategies: bounded fallback/degrade/retry patterns for predictable behavior.
+- Certification artifacts: run traces describing which constraints were applied, waived, or failed.
 - Model adapters: OpenAI, Anthropic, and custom HTTP backends to keep workflows portable.
 - Local stack: FastAPI backend + model server layer + frontend playground UI + dev scripts.
 
 ## What this repository explicitly does NOT include (Non-Goals)
 Nanocode v1.0 does **not** provide:
-- Governance or enforcement mechanisms
-- Persistent internal identity/state beyond explicit external storage you configure
+- A closed or sovereign execution kernel
 - Self-modifying instruction graphs or autonomous mutation
-- Any Cham-Code production components
+- Persistent internal identity/state beyond explicit external storage you configure
+- Kernel-level rule authority independent of the user’s runtime configuration
+- Any v2.0 production kernel components
 
-Governance, policy enforcement, or autonomous control features are intentionally out of scope; they should be contributed as separate modules or forks by those who need them.
+If a feature requires kernel sovereignty (persistent internal state, autonomous rule enforcement, or self-modifying execution), it belongs to **Nanocode v2** and is out of scope for this repo.
 
-## Relationship to Cham-Code / Nanocode v2.0
-- **Nanocode v1.0 (this repo):** open-source observation and orchestration framework.
-- **Nanocode v2.0 (Cham-Code):** separate proprietary kernel; not distributed or referenced here.
+## Relationship to Nanocode v2.0
+- **Nanocode v1.0 (this repo):** open-source orchestration framework and reference implementation.
+- **Nanocode v2.0 kernel:** proprietary, closed-source kernel not distributed here.
 
-This separation maintains licensing clarity and architectural independence.
+This separation is intentional and enforced to prevent licensing ambiguity and architectural drift.
 
 ## Prerequisites
 - Python 3.10+ (or the version used by this project)
@@ -36,8 +37,8 @@ This separation maintains licensing clarity and architectural independence.
 
 ## Quickstart
 ```bash
-git clone https://github.com/<your-org>/Nanocode-v1.0-main.git
-cd Nanocode-v1.0-main
+git clone https://github.com/<your-org>/nanocode-local-main.git
+cd nanocode-local-main
 
 # Backend dependencies
 python3 -m pip install -r requirements.txt
@@ -80,17 +81,8 @@ npm run preview -- --host 0.0.0.0 --port 4173
 ```
 Then open http://localhost:4173.
 
-## Local Inference Reliability (v1.0)
-Nanocode v1.0 includes orchestration reliability controls to improve continuity under degraded local-model conditions (latency, jitter, short upstream outages). This is transport/session continuity only, not governance.
-
-- Configurable timeouts: separate total/connect/read timeout settings for model calls.
-- Bounded retries: retries transient request errors and selected upstream statuses with exponential backoff and caps.
-- Optional loop fuse: an opt-in in-memory idempotency guard that can block rapid repeats of identical requests.
-
-These controls improve resilience but do not eliminate all failures.
-
 ## Architecture at a Glance
-- **Orchestration framework**: constraints, recovery strategies, and execution traces for observable agent behavior.
+- **Orchestration framework**: constraints, policy gating, tragedy strategies, and certification artifacts to bound agent behavior.
 - **Model adapters**: swap between OpenAI, Anthropic, or custom backends without changing workflows.
 - **Frontend playground**: experiment with constraints and workflows in-browser.
 - **CLI/scripts**: `configure_nanocode.sh` for setup and `dev.sh` for a full local stack.

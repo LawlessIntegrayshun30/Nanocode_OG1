@@ -1,0 +1,8 @@
+Nanocode v1.0 cleanup report
+Removed directory: nanocode-local-main (duplicate copy)
+Removed artifacts: __pycache__/ and *.pyc
+Updated docs: replaced 'nanocode-local-main' references with 'Nanocode-v1.0-main'
+
+Counts:
+- Original files: 216
+- Clean files: 80

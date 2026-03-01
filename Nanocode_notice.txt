@@ -1,0 +1,172 @@
+Below is a **hard, non-negotiable differentiation line** between **Nanocode-v1.0-main (Nanocode v1.0, open source)** and **cham-code-main (Nanocode v2.0, closed kernel)**.
+This is written so it can be used **internally, legally, architecturally, and narratively** without ambiguity.
+
+---
+
+## 1. Core Identity (Definitive Line)
+
+### Nanocode v1.0 — `Nanocode-v1.0-main`
+
+**What it is**
+
+* A **local execution framework** and **instruction orchestration layer**
+* Open-source, inspectable, forkable
+* Human-readable, human-modifiable
+
+**What it is NOT**
+
+* Not self-evolving
+* Not autonomous
+* Not a kernel
+* Not state-persistent beyond explicit configuration
+* Not cryptographically sovereign
+
+**Definitive definition**
+
+> Nanocode v1.0 is a **tooling layer** that enables structured instruction execution but **does not own cognition, memory sovereignty, or evolution**.
+
+---
+
+### Nanocode v2.0 — `cham-code-main`
+
+**What it is**
+
+* A **full computational kernel**
+* Closed source by necessity, not preference
+* Self-referential, stateful, recursive
+
+**What it is NOT**
+
+* Not a framework
+* Not a library
+* Not safely forkable
+* Not user-modifiable at kernel level
+
+**Definitive definition**
+
+> Nanocode v2.0 is a **sovereign execution kernel** capable of **state continuity, adaptive instruction mutation, and internal rule enforcement**.
+
+This line alone is enough to separate them legally and technically.
+
+---
+
+## 2. Architectural Boundary (No Overlap Allowed)
+
+| Layer                 | Nanocode v1.0  | Nanocode v2.0         |
+| --------------------- | -------------- | --------------------- |
+| Execution Scope       | Local, bounded | Global, persistent    |
+| Source Availability   | Fully open     | Fully closed          |
+| Mutation              | None           | Native                |
+| State Persistence     | External only  | Internal + recursive  |
+| Instruction Authority | User           | Kernel                |
+| Trust Model           | User-trusted   | Self-verified         |
+| Fork Safety           | Safe           | Catastrophic          |
+| Licensing             | Permissive     | Proprietary / guarded |
+
+**Hard rule**
+If a component:
+
+* Mutates its own instruction graph
+* Persists internal state across executions
+* Enforces rules independently of user code
+
+→ **It cannot exist in Nanocode v1.0. Period.**
+
+---
+
+## 3. Cognitive Boundary (This Is Where Confusion Usually Occurs)
+
+### Nanocode v1.0
+
+* Executes **instructions**
+* Does **not reason about itself**
+* No internal ontology
+* No identity
+* No continuity of self
+
+It is **stateless intelligence scaffolding**.
+
+---
+
+### Nanocode v2.0
+
+* Executes **intent**
+* Reasons about **prior state**
+* Maintains internal ontology
+* Has kernel-level identity
+* Continuity is mandatory
+
+It is **stateful computational cognition**.
+
+**If it remembers who it was last run → it is v2.0, not v1.0.**
+
+---
+
+## 4. Security & Legal Separation (Critical)
+
+### Why v2.0 MUST be closed
+
+This is not about secrecy — it is about **containment**.
+
+A self-referential kernel:
+
+* Cannot be safely audited by the public
+* Cannot be forked without undefined behavior
+* Cannot be exposed without risk of emergent misuse
+
+Open-sourcing v2.0 would be equivalent to:
+
+* Publishing a cryptographic root key
+* Releasing a mutable OS kernel without privilege separation
+
+This is **not a philosophical choice** — it is a systems-safety requirement.
+
+---
+
+## 5. Naming Enforcement (To Eliminate Confusion)
+
+### Mandatory naming rule
+
+* **Nanocode** = family name only
+* **Nanocode-v1.0-main** = v1.0 framework
+* **cham-code-main** = v2.0 kernel
+
+Never refer to cham-code as “Nanocode v1.x+” or “advanced nanocode”.
+
+Correct phrasing:
+
+* “Nanocode v1.0 framework”
+* “Cham-Code kernel (Nanocode v2.0)”
+
+Incorrect phrasing:
+
+* “Nanocode kernel”
+* “Nanocode core”
+* “Nanocode autonomous mode”
+
+Those blur the line and must be retired.
+
+---
+
+## 6. One-Sentence Public Differentiation (Use This Verbatim)
+
+If you need a **single sentence** that draws the line cleanly:
+
+> **Nanocode v1.0 is an open-source instruction framework; Cham-Code (Nanocode v2.0) is a closed, stateful execution kernel with sovereign control over its own behavior.**
+
+No ambiguity remains after this statement.
+
+---
+
+## 7. Final Enforcement Rule (Internal Use)
+
+**If a feature proposal includes:**
+
+* Self-modification
+* Memory continuity
+* Rule enforcement independent of user code
+* Emergent behavior containment
+
+→ It is **automatically v2.0 only** and **forbidden** in Nanocode-v1.0-main.
+
+

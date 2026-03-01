@@ -1,0 +1,22 @@
+Nanocode v1.0 cleanup verification
+Generated: 2026-02-04T06:21:03.517125Z
+
+Comparison: root vs nanocode-local-main duplicate subtree in original zip.
+Files under nanocode-local-main: 100
+Identical to root: 85
+Different from root: 9
+Only pycache/pyc in nanocode-local-main: 6
+
+Different files (archived under _redundant_variants/nanocode-local-main-deltas):
+- README.md
+- WHITEPAPER.md
+- app/config.py
+- app/dependencies.py
+- app/main.py
+- app/model_client.py
+- app/routers/nanocode_router.py
+- frontend/README.md
+- model_server/server.py
+
+Sanity check:
+- pytest: 5 passed
