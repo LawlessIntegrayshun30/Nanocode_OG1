@@ -7,14 +7,14 @@ Single-page UI that showcases the existing Nanocode wrapper. All calls go to the
 
 ## Prerequisites
 
-- Node 18+ (Vite recommends 20.19+; Node 20.6 works with warnings).
-- npm.
+- Node `20.19.0+` or `22.12.0+`.
+- npm `10+`.
 
 ## Install dependencies
 
 ```bash
 cd frontend
-npm install
+npm ci
 ```
 
 ## Configure API base URL
@@ -33,6 +33,14 @@ npm run dev
 
 Then open the URL shown in the terminal (usually http://localhost:5173).
 
+## Run quality gates
+
+```bash
+npm run verify
+```
+
+This runs lint, typecheck, tests, and production build.
+
 ## Build for production
 
 ```bash
@@ -44,7 +52,7 @@ The compiled assets are emitted to `frontend/dist`.
 ## What the UI shows
 
 - **Constraint Playground**: enter a user request + constraints, view live output, heuristic constraint satisfaction, and an “internal prompt” preview.
- - **Idea → Spec → Tests**: three-step workflow (each calls `/nanocode`) to turn an idea into a spec, tests, and a risk summary.
+- **Idea → Spec → Tests**: three-step workflow (each calls `/nanocode`) to turn an idea into a spec, tests, and a risk summary.
 - **Audience Switcher**: one click to generate tailored outputs for exec/PM/dev/legal audiences with tone/length controls.
 - **Health Indicator**: polls `/health` on load and periodically to show wrapper status.
 - **Request/Response Inspector**: toggle to see the last request body and response body sent to `/nanocode`.

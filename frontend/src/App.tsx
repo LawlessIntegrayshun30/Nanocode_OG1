@@ -6,7 +6,7 @@ import AudienceSwitcher from './components/AudienceSwitcher';
 import HealthIndicator from './components/HealthIndicator';
 import RequestInspector from './components/RequestInspector';
 import type { ApiError, NanocodeRequest, NanocodeResponse } from './types';
-import { generate } from './api/nanocodeClient';
+import { generate, toApiError } from './api/nanocodeClient';
 
 type TabKey = 'playground' | 'workflow' | 'audience';
 
@@ -33,9 +33,9 @@ function App() {
       setLastResponse(response);
       return response;
     } catch (err) {
-      const error = err as ApiError;
+      const error = toApiError(err);
       setLastError(error);
-      throw err;
+      throw error;
     }
   };
 
